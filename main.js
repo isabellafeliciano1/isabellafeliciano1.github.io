@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 //Starting postion of the images from the top
-const STARTY = 20;
+const STARTY = 0;
 
 //Create a new scene
 const scene = new THREE.Scene();
