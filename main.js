@@ -12,22 +12,30 @@ camera.position.y = STARTY;
 camera.position.x = 15;
 camera.position.z = 30;
 
+//change background of website
+const bgTexture = new THREE.TextureLoader().load('img/pink.png');
+scene.background = bgTexture;
+
 //Create list of images in the 'img' folder
 let imgList = [
     'MyCat.png',
-    'MyHead.png',
+    'Myself.png',
+    'canva.png',
+    'eevee.png',
     'MyCat.png',
-    'MyHead.png'
+    'Myself.png',
+    'canva.png',
+    'eevee.png'
 ]
 
 // add every listed image as a plane mesh with texture to scene
 for (const image in imgList) {
 // every mesh has a geometry, texture, and material
      const texture = new THREE.TextureLoader().load('img/' + imgList[image])
-     const geometry = new THREE.PlaneGeometry(30, 20);
+     const geometry = new THREE.PlaneGeometry(20, 30);
      const material = new THREE.MeshBasicMaterial(
           {
-               color: 0x878787,
+               color: 0x999999,
                side: THREE.DoubleSide,
                map: texture // add the texture image here
           }
@@ -69,10 +77,10 @@ function resizeWindow() {
           };
      }
      else {
-          camera.position.x = 18;
+          camera.position.x = 26;
           for (const child in scene.children) {
                scene.children[child].rotation.y = 15 * (Math.PI / 180);
-               scene.children[child].position.y = child * -30
+               scene.children[child].position.y = child * -40
           };
      };
 };
