@@ -18,12 +18,12 @@ scene.background = bgTexture;
 
 //Create list of images in the 'img' folder
 let imgList = [
-    'MyCat.png',
     'Myself.png',
-    'canva.png',
+    'MyCat.png',
+    'animal.png',
+    'cat.png',
+    'Sushi.png',
     'eevee.png',
-    'MyCat.png',
-    'Myself.png',
     'canva.png',
     'eevee.png'
 ]
@@ -35,7 +35,7 @@ for (const image in imgList) {
      const geometry = new THREE.PlaneGeometry(20, 30);
      const material = new THREE.MeshBasicMaterial(
           {
-               color: 0x999999,
+               color: 0x989898,
                side: THREE.DoubleSide,
                map: texture // add the texture image here
           }
