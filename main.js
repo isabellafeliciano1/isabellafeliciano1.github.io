@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 //Starting postion of the images from the top
-const STARTY = 0;
+const STARTY = -2.5;
 
 //Create a new scene
 const scene = new THREE.Scene();
@@ -29,7 +29,7 @@ let imgList = [
 for (const image in imgList) {
 // every mesh has a geometry, texture, and material
      const texture = new THREE.TextureLoader().load('img/' + imgList[image])
-     const geometry = new THREE.PlaneGeometry(20, 30);
+     const geometry = new THREE.PlaneGeometry(20, 20);
      const material = new THREE.MeshBasicMaterial(
           {
                color: 0x989898,
@@ -77,7 +77,7 @@ function resizeWindow() {
           camera.position.x = 26;
           for (const child in scene.children) {
                scene.children[child].rotation.y = 15 * (Math.PI / 180);
-               scene.children[child].position.y = child * -40
+               scene.children[child].position.y = child * -30
           };
      };
 };
