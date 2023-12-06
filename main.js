@@ -13,7 +13,7 @@ camera.position.x = 15;
 camera.position.z = 30;
 
 //change background of website
-const bgTexture = new THREE.TextureLoader().load('img/pink.png');
+const bgTexture = new THREE.TextureLoader().load('/img/bg.png');
 scene.background = bgTexture;
 
 //Create list of images in the 'img' folder
@@ -46,7 +46,7 @@ for (const image in imgList) {
 function moveCamera() {
      const top = document.body.getBoundingClientRect().top;
      camera.position.y = STARTY + top * 0.05;
-     console.log(top);
+
 };
  
 document.body.onscroll = moveCamera;

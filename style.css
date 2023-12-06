@@ -8,7 +8,7 @@ canvas {
 body {
     font-size: 22px;
     color:
-    #FFFFFF;
+        #000000;
 
 }
 
@@ -20,56 +20,25 @@ body {
 }
 
 .box {
-    background-color: rgba(255, 176, 227, 0.6);
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     border-radius: 3px;
     border: solid 2px;
+    box-shadow: 10px 13px;
 }
 
-.smallbox {
-    background-color: rgba(255, 176, 227, 0.6);
-    border-radius: 3px;
-    border: solid 2px;
-    width: 50%;
-    float: right;
-
-    font-family: 'Courier New', Courier, monospace, monospace;
-    font-weight: bold;
-}
-
-.Smallbox {
-    background-color: rgba(255, 176, 227, 0.6);
-    border-radius: 3px;
-    border: solid 2px;
-    width: 40%;
-    float: left;
-
-    font-family: 'Courier New', Courier, monospace, monospace;
-    font-weight: bold;
-}
-
-.mediumbox {
-    background-color: rgba(255, 176, 227, 0.6);
-    border-radius: 3px;
-    border: solid 2px;
-    width: 51%;
-    height: 30%;
-    float: right;
-    position: absolute;
-    font-family: 'Courier New', Courier, monospace, monospace;
-    font-weight: bold;
-    margin: 4%;
-    margin-top: 2%;
-    margin-bottom: 10%;
-}
-
-
+/* Title color */
 h1 {
-    color: #FFB0E3;
+    color: #146892;
+    font-size: 250%;
+    margin-top: 5%;
 }
 
+/* To change the size to different screens */
 @media screen and (max-width: 600px) {
     #content {
-         float: none;
-         width: 100%
+        float: none;
+        width: 100%
     }
 }
+
