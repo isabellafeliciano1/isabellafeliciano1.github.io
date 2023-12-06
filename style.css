@@ -29,7 +29,7 @@ body {
     background-color: rgba(255, 176, 227, 0.6);
     border-radius: 3px;
     border: solid 2px;
-    width: 40%;
+    width: 50%;
     float: right;
 
     font-family: 'Courier New', Courier, monospace, monospace;
@@ -46,6 +46,22 @@ body {
     font-family: 'Courier New', Courier, monospace, monospace;
     font-weight: bold;
 }
+
+.mediumbox {
+    background-color: rgba(255, 176, 227, 0.6);
+    border-radius: 3px;
+    border: solid 2px;
+    width: 51%;
+    height: 30%;
+    float: right;
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace, monospace;
+    font-weight: bold;
+    margin: 4%;
+    margin-top: 2%;
+    margin-bottom: 10%;
+}
+
 
 h1 {
     color: #FFB0E3;
