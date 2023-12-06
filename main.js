@@ -22,6 +22,7 @@ let imgList = [
     'pogs.png',
     'MyCat.png',
     'cat.png',
+    'Sushi.png',
 ]
 
 // add every listed image as a plane mesh with texture to scene

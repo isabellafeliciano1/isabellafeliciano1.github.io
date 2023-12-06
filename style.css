@@ -36,6 +36,17 @@ body {
     font-weight: bold;
 }
 
+.Smallbox {
+    background-color: rgba(255, 176, 227, 0.6);
+    border-radius: 3px;
+    border: solid 2px;
+    width: 40%;
+    float: left;
+
+    font-family: 'Courier New', Courier, monospace, monospace;
+    font-weight: bold;
+}
+
 h1 {
     color: #FFB0E3;
 }
