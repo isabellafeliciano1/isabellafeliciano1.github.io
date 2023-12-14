@@ -367,10 +367,91 @@ function Player(maze, c, _cellsize, onComplete, sprite = null) {
             cellSize - offsetRight,
             cellSize - offsetRight
         );
+        if (coord.x === maze.endCoord().x && coord.y === maze.endCoord().y) {
+            onComplete(moves);
+            player.unbindKeyDown();
+        }
+    }
+
+    function drawSpriteImg(coord) {
+        var offsetLeft = cellSize / 50;
+        var offsetRight = cellSize / 25;
+        ctx.drawImage(
+            sprite,
+            0,
+            0,
+            sprite.width,
+            sprite.height,
+            coord.x * cellSize + offsetLeft,
+            coord.y * cellSize + offsetLeft,
+            cellSize - offsetRight,
+            cellSize - offsetRight
+        );
+        if (coord.x === maze.endCoord().x && coord.y === maze.endCoord().y) {
+            onComplete(moves);
+            player.unbindKeyDown();
+        }
+    }
+
+    function removeSprite(coord) {
+        var offsetLeft = cellSize / 50;
+        var offsetRight = cellSize / 25;
+        ctx.clearRect(
+            coord.x * cellSize + offsetLeft,
+            coord.y * cellSize + offsetLeft,
+            cellSize - offsetRight,
+            cellSize - offsetRight
+        );
+    }
+
+    function check(e) {
+        var cell = map[cellCoords.x][cellCoords.y];
+        moves++;
+        switch (e.keycode) {
+            case 65:
+            case 37: //West
+                if (cell.w == true) {
+                    removeSprite(cellCoords);
+                    cellCoords = {
+                        x: cellCoords.x - 1,
+                        y: cellCoords.y
+                    };
+                    drawSprite(cellCoords);
+                }
+                break;
+            case 87:
+            case 38: //North
+                if (cell.n == true) {
+                    removeSprite(cellCoords);
+                    cellCoords = {
+                        x: cellCoords.x,
+                        y: cellCoords.y - 1
+                    };
+                    drawSprite(cellCoords);
+                }
+                break;
+            case 68:
+            case 39: //East
+                if (cell.e == true) {
+                    removeSprite(cellCoords);
+                    cellCoords = {
+                        x: cellCoords.x + 1,
+                        y: cellCoords.y
+                    };
+                    drawSprite(cellCoords);
+                }
+                break;
+            case 83:
+            case 40: //South
+                if (cell.s == true) {
+                    removeSprite(cellCoords);
+                    cellCoords = {
+                        x: cellCoords.x,
+                        y: cellCoords.y + 1
+                    };
+                    drawSprite(cellCoords);
+                }
+                break;
+        }
     }
 }
-
-
-
-
-1428
