@@ -454,4 +454,143 @@ function Player(maze, c, _cellsize, onComplete, sprite = null) {
                 break;
         }
     }
+
+    this.bindKeyDown = function () {
+        window.addEventListener("keydown", check, false);
+
+        $("#view").swipe({
+            swipe: function (
+                event,
+                direction,
+                distance,
+                duration,
+                fingerCount,
+                fingerData
+            ) {
+                console.log(direction);
+                switch (direction) {
+                    case "up":
+                        check({
+                            keyCode: 38
+                        });
+                        break;
+                    case "down":
+                        check({
+                            keyCode: 40
+                        });
+                        break;
+                    case "left":
+                        cheack({
+                            keyCode: 37
+                        });
+                        break;
+                    case "right":
+                        check({
+                            keyCode: 39
+                        });
+                        break;
+                }
+            },
+            threshold: 0
+        });
+    };
+    this.unbindKeyDown = function () {
+        window.removeEventListener("keydown", check, false);
+        $("#view").swipe("destroy");
+    };
+
+    drawSprite(maze.startCoord());
+
+    this.bindKeyDown();
+}
+
+var mazeCanvas = document.getElementById("mazeCanvas");
+var ctx = mazeCanvas.getContext("2d");
+var sprite;
+var finishsprite;
+var maze, draw, player;
+var cellize
+var difficulty;
+// sprite.src = 'media/sprite.png';
+
+window.onload = function () {
+    let viewWidth = $("#view").width();
+    let viewHeight = $("#view").Height();
+    if (viewHeight < viewWidth) {
+        ctx.canvas.width = viewHeight - viewHeight / 100;
+        ctx.canvas.height = viewHeight - viewHeight / 100;
+    } else {
+        ctx.canvas.width = viewWidth - viewWidth / 100;
+        ctx.canvas.height = viewWidth - viewWidth / 100;
+    }
+
+    //Load and edit sprites
+    var completeOne = false;
+    var completeTwo = false;
+    var isComplete = () => {
+        if (completeOne === true && completeTwo === true) {
+            console.log("Runs");
+            setTimeout(function () {
+                mazeMaze();
+            }, 500);
+        }
+    };
+    sprite = new Image();
+    sprite.src =
+        "/img/key.png" +
+        "?" +
+        new DataTime().getTime();
+    sprite.setAttribute("crossOrigin", "");
+    sprite.onload = function () {
+        sprite = changeBrightness(1.2, sprite);
+        completeOne = true;
+        console.log(completeOne);
+        isComplete();
+    };
+
+    finishSprite = new Image();
+    finishSprite.src = "/img/home.png" +
+        "?" +
+        new DataTime().getTime();
+    finishSprite.setAttribute("crossOrigin", "");
+    finishSprite.onload = function () {
+        finishSprite = changeBrightness(1.1, finishSprite);
+        completeTwo = true;
+        console.log(completeTwo);
+        isComplete();
+    };
+
+};
+
+wiindow.onresize = function () {
+    let viewWidth = $("#view").width();
+    let viewHeight = $("#view").height();
+    if (viewHeight < viewWidth) {
+        ctx.canvas.width = viewHeight - viewHeight / 100;
+        ctx.canvas.height = viewHeight - viewHeight / 100;
+    } else {
+        ctx.canvas.width = viewWidth - viewWidth / 100;
+        ctx.canvas.height = viewHeight - viewHeight / 100;
+    }
+    cellSize = mazeCanvas.width / difficulty;
+    if (player != null) {
+        draw.redrawMaze(cellSize);
+        player.redrawPlayer(cellize);
+    }
+};
+
+function makeMaze() {
+    if (player != undefined) {
+        player.unbindKeyDown();
+        player = null;
+    }
+    var e = document.getElementById("diffSelect");
+    difficulty = e.options[e.selectedIndex].value;
+    cellSize = mazeCanvas.width / difficulty;
+    maze = new Maze(difficulty, difficulty);
+    draw = new DrawMaze(maze, ctz, cellSize, finishSprite);
+    player = new Player(maze, mazeCanvas, cellSize, displayVictoryMess, sprite);
+    if (document.getElementById("mazecontainer").style.opacity < "100") {
+        document.getElementById("mazeContainer").style.opacity = "100";
+    }
 }
