@@ -20,7 +20,7 @@ scene.background = bgTexture;
 let imgList = [
     'Skyward.png',
     'pogs.png',
-    'MyCat.png',
+    'rock,paper,scissors.png',
     'crasher and sam.png',
     'junior fighting game.png',
 ]
