@@ -18,16 +18,16 @@ scene.background = bgTexture;
 
 //Create list of images in the 'img' folder
 let imgList = [
-    'Skyward.png',
-    'bubblepopper.png',
-    'rock,paper,scissors.png',
-    'crasher and sam.png',
-    'junior fighting game.png',
+     'Skyward.png',
+     'bubblepopper.PNG',
+     'rock,paper,scissors.PNG',
+     'crasher and sam.PNG',
+     'junior fighting game.PNG',
 ]
 
 // add every listed image as a plane mesh with texture to scene
 for (const image in imgList) {
-// every mesh has a geometry, texture, and material
+     // every mesh has a geometry, texture, and material
      const texture = new THREE.TextureLoader().load('img/' + imgList[image])
      const geometry = new THREE.PlaneGeometry(20, 20);
      const material = new THREE.MeshBasicMaterial(
@@ -41,25 +41,25 @@ for (const image in imgList) {
      // add new plane to the scene
      scene.add(plane);
 };
- 
+
 // Move the camera with the scroll bar
 function moveCamera() {
      const top = document.body.getBoundingClientRect().top;
      camera.position.y = STARTY + top * 0.05;
 
 };
- 
+
 document.body.onscroll = moveCamera;
- 
+
 // create the renderer and attatch to the canvas
 const renderer = new THREE.WebGLRenderer(
      { canvas: document.querySelector('#bg') }
 );
- 
+
 // set renderer size and add it to the page
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
- 
+
 // resize the threejs canvas with the window and adjust for phone sizes
 function resizeWindow() {
      camera.aspect = window.innerWidth / window.innerHeight;
@@ -81,18 +81,18 @@ function resizeWindow() {
           };
      };
 };
- 
+
 // set initial canvas size
 resizeWindow();
- 
+
 // resize canvas on window resize
 window.addEventListener('resize', resizeWindow, false);
- 
+
 // animation loop (calls itself resursively)
 function animate() {
      requestAnimationFrame(animate);
      renderer.render(scene, camera);
 };
- 
+
 // start the animation
 animate();
