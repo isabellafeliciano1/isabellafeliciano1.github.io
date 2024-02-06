@@ -21,6 +21,7 @@ let imgList = [
      'Skyward.png',
      'bubblepopper.PNG',
      'rock,paper,scissors.PNG',
+     'betterspaceelves.png',
 ]
 
 // add every listed image as a plane mesh with texture to scene
