@@ -1,17 +1,86 @@
-<style>
-    body {
-        background: black;
-    }
-</style>
-<canvas></canvas>
+<!DOCTYPE html>
+<html lang="en">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"
-    integrity="sha512-Mf/xUqfWvDIr+1B6zfnIDIiG7XHzyP/guXUWgV6PgaQoIFeXkJQR5XWh9fqAiCiRCpemabt3naV4jhDWVnuYDQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/utils.js"></script>
-<script src="js/data/collisions.js"></script>
-<script src="js/classes/CollisionBlock.js"></script>
-<script src="js/classes/Sprite.js"></script>
-<script src="js/classes/Player.js"></script>
-<script src="js/evenlisteners.js"></script>
-<script src="index.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabella Felicianos's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="bg"></canvas>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+          }
+        }
+      </script>
+    <div id="content">
+
+        <h1> Isabella Feliciano's Portfolio </h1>
+        <br>
+        <h2> About Me! </h2>
+
+        <div class="box">
+            <p>
+                Hello, my name is Isabella Feliciano, I am a current 11th grade student at York County School of
+                Technology in the
+                Information
+                Technology program with a focus on Programming. I am currently working on the CIW Javascript Specialist
+                Certification.
+            </p>
+
+        </div>
+        <br>
+
+        <h2> Links To My Work: </h2>
+        <div class="box">
+            <script type="module" src="main.js"> </script>
+
+            <p>
+                <a href="/rock, paper, scissors/" target="_blank"> Rock, Paper, Scissors </a>
+                <br>
+                <a href="/Bubble Popper/" target="_blank"> Poping Bubles! </a>
+                <br>
+                <a href="/Multiplayer Game Project/" target="_blank"> The Better Space Elves </a>
+                <br>
+                <a href="/KingDoors/" target="_blank">King Doors Game</a>
+            </p>
+
+        </div>
+        <br>
+
+        <h3> Activities I have Participated In: </h3>
+        <div class="box">
+            <p>
+                I have experience serving as a secretary in the student council and have actively participated in Girl
+                Scouts, achieving both the bronze and silver awards.
+                Additionally, I have devoted over 100 hours to volunteering for various events, such as a kid's program
+                at Friendship Community Church in Dover, PA, and organizing a club social event for all age groups at
+                Dover Area High School.
+        </div>
+        <br>
+
+        <h3> Jobs I have had:</h3>
+        <div class="box">
+            <p>
+                I have held positions as a sales associate at Rutter's, worked at an ice cream parlor called Bill Maks,
+                and served as a hostess at Texas Roadhouse. I am also starting a new position at Dunkin' Donuts.
+            </p>
+
+        </div>
+        <br>
+
+        <h3> Contact Me! </h3>
+        <div class="box">
+            <p>
+                3071 Claremont rd, Dover, PA 17315
+                <br>
+                (717)-600-4860
+                <br>
+                email: isabellafeliciano188@icloud.com
+            </p>
+        </div>

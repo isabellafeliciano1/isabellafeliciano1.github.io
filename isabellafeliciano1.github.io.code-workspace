@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "isabellafeliciano1.github.io",
+			"path": "."
+		},
+		{
+			"name": "Multiplayer Game Project",
+			"path": "../docpacs2324/docpac_22020224/Multiplayer Game Project"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "isabellafeliciano1.github.io"
+	}
+}
