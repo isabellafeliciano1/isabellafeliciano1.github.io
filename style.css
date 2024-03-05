@@ -19,12 +19,16 @@ body {
     font-weight: bold;
 }
 
-.box {
+.box, .skillsBox {
     background: rgb(238, 174, 202);
     background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     border-radius: 3px;
     border: solid 2px;
     box-shadow: 10px 13px;
+    padding-left: 5%;
+}
+.skillsBox {
+    display: flex;
 }
 
 /* Title color */
@@ -33,6 +37,7 @@ h1 {
     font-size: 250%;
     margin-top: 5%;
 }
+
 
 /* To change the size to different screens */
 @media screen and (max-width: 600px) {
