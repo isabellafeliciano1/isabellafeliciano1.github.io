@@ -19,8 +19,9 @@ scene.background = bgTexture;
 //Create list of images in the 'img' folder
 let imgList = [
      'Skyward.png',
-     'bubblepopper.PNG',
      'rock,paper,scissors.PNG',
+     'bubblepopper.PNG',
+     'kingdoors.png',
      'betterspaceelves.png',
 ]
 
